@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Övergång</title>
+
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+
+
+   <script
+  src="https://code.jquery.com/jquery-3.1.1.js"
+  integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+  crossorigin="anonymous"></script>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	
+</head>
+<body>
+<div class="cointainer-fluid">
+<div id="shit">
+</div> 
+
+
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#side" aria-expanded="false" aria-controls="side" id="button">
+  Button with data-target
+</button>
+
+
+<div id="side" class="pull-left collapse">
+	<ul class="nav nav-pills nav-stacked" id="menu1">
+		<img src="placeholder.png" alt="..." class="img-circle center-block" id="logo">
+		<li><p></p></li>
+  		<li role="presentation"><a href="index.html">Hem</a></li>
+  		<li role="presentation"><a href="info.html">Info</a></li>
+  		<li role="presentation"  class="active"><a href="formular.html">Formulär</a></li>
+	</ul>
+</div>
+
+<header id="header1">
+	<img src="headerr.png">
+</header>
+
+<section id="section1" class="black-bg white-text row">
+	<h1 class="col-sx-12">Formulär</h1>
+		<form class="form-horizontal">
+  			<div class="form-group">
+    			<label for="InputName" class="col-sm-2 control-label">Namn</label>
+    			<div class="col-sm-9">
+    			<input type="text" class="form-control" id="InputName" placeholder="Namn">
+    			</div>
+  			</div>
+  		<div class="form-group">
+    		<label for="InputOrt" class="col-sm-2 control-label">Ort</label>
+    		<div class="col-sm-9">
+    		<input type="text" class="form-control" id="InputOrt" placeholder="Ort">
+    		</div>
+  		</div>
+  		<div class="form-group">
+    		<label for="InputTel" class="col-sm-2 control-label">Telefon</label>
+    		<div class="col-sm-9">
+    		<input type="number" class="form-control" id="InputTel" placeholder="Telefon">
+    		</div>
+  		</div>
+  			<div class="col-sm-offset-2">
+  			<button type="submit" class="btn btn-default">Submit</button>
+  			</div>
+		</form>
+</section>
+</div>
+</div>
+</body>
+</html>
