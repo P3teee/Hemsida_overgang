@@ -67,6 +67,11 @@ html, body {
 
 }
 
+li a:hover {
+	background-color: #000000;
+	color: #000000;
+}
+
 
 
 
