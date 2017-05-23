@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html>
+
+<html>	
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,6 +22,7 @@
 	
 </head>
 <body>
+
 <div class="cointainer-fluid">
 <div id="shit">
 </div> 
@@ -40,8 +41,10 @@
   		<li role="presentation"><a href="info.html" class="link_list">Info</a></li>
   		<li role="presentation"  class="active" ><a href="formular.html" class="link_list active">Formulär</a></li>
   		<li> <button class="btn btn-primary center-block" type="button" data-toggle="collapse" data-target="#side" aria-expanded="false" aria-controls="side" id="button2">
+  		
   Meny
 </button></li>
+<li> <a href="login.php"><button class="btn btn-primary center-block" type="button">Sug penis</button></a></li>
 	</ul>
 </div>
 
@@ -51,36 +54,85 @@
 
 <section id="section1" class="black-bg white-text row">
 	<h1 class="col-sm-12">Formulär</h1>
-		<form class="form-horizontal" action="index.php" method="post">
+		<form class="form-horizontal" action="index.php" method="get">
   			<div class="form-group">
     			<label for="InputName" class="col-sm-1 control-label">Namn</label>
-    			<div class="col-sm-11">
-    			<input name="name" type="text" class="form-control" id="InputName" placeholder="Namn">
+    			<div class="col-sm-11 center-block">
+    			<p class="form-control"> <?php echo $_POST["name"]; ?><br></p>
     			</div>
   			</div>
   		<div class="form-group">
     		<label for="InputOrt" class="col-sm-1 control-label">Ort</label>
     		<div class="col-sm-11">
-    		<input name="ort" type="text"  class="form-control" id="InputOrt" placeholder="Ort">
+    		<p class="form-control"><?php echo $_POST["ort"]; ?><br></p>
     		</div>
   		</div>
   		<div class="form-group">
     		<label for="InputMail" class="col-sm-1 control-label">Mail</label>
     		<div class="col-sm-11">
-    		<input name="email" type="email" class="form-control" id="InputMail" placeholder="exempel@exempel.com">
+    		<p class="form-control"> <?php echo $_POST["email"]; ?><br></p>
     		</div>
   		</div>
   		<div class="form-group">
     		<label for="InputTel" class="col-sm-1 control-label">Telefon</label>
     		<div class="col-sm-11">
-    		<input name="nummer" type="number" class="form-control" id="InputTel" placeholder="Telefon">
+    		<p class="form-control"> <?php echo $_POST["nummer"]; ?><br></p>
     		</div>
   		</div>
-  			<div class="col-sm-offset-1">
-  			<button type="submit" class="btn btn-default">Submit</button>
-  			</div>
+  			
 		</form>
 </section>
 </div>
 </body>
-</html> 
+
+
+
+
+
+
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "databas_1";
+
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+	die("Connection failed: " . $conn->connect_error);
+}
+
+ $sql = "INSERT INTO formular (name, ort, email, nummer)
+VALUES ('$_POST[name]', '$_POST[ort]', '$_POST[email]', '$_POST[nummer]')"; 
+$sql1 = "SELECT id, name, ort, email, nummer  FROM formular";
+$result = $conn->query($sql1);
+
+
+
+ if ($conn->query($sql) === TRUE) {
+	
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+} 
+
+
+
+
+ if ($result->num_rows > 0) {
+	echo "<table class='table table-striped'><tr><th>ID</th><th>Namn</th><th>Ort</th><th>Email</th><th>Nummer</th></tr>";
+	while($row = $result->fetch_assoc()) {
+		echo "<tr> <td>" .$row["id"]. "</td> <td>" .$row["name"]. "</td> <td> " .$row["ort"]. "</td> <td>" .$row["email"]. "</td> <td>" .$row["nummer"]. "</td> </tr>";
+	} 
+	echo "</table>";
+} else {
+	echo "0 Results";
+} 
+
+$conn->close();
+
+?>
+
+
+
+</html>
