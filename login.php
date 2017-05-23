@@ -26,6 +26,7 @@
 </head>
    <body>
       
+
       <h2 class="text-center">Enter Username and Password</h2> 
       <div class = "container form-signin">
          
@@ -35,13 +36,14 @@
             if (isset($_POST['login']) && !empty($_POST['username']) 
                && !empty($_POST['password'])) {
         
-               if ($_POST['username'] == 'tutorialspoint' && 
-                  $_POST['password'] == '1234') {
+               if ($_POST['username'] == '123' && 
+                  $_POST['password'] == '123') {
                   $_SESSION['valid'] = true;
                   $_SESSION['timeout'] = time();
                   $_SESSION['username'] = 'tutorialspoint';
+
                   
-                  echo 'You have entered valid use name and password';
+                  header("location: result.php");
                   
                }else {
                   $msg = 'Wrong username or password';
@@ -57,15 +59,15 @@
             ?>" method = "post">
             <h4 class = "form-signin-heading"><?php echo $msg; ?></h4>
             <input type = "text" class = "form-control" 
-               name = "username" placeholder = "username = tutorialspoint" 
+               name = "username" placeholder = "Username" 
                required autofocus></br>
             <input type = "password" class = "form-control"
-               name = "password" placeholder = "password = 1234" required>
+               name = "password" placeholder = "Password" required>
             <button class = "btn btn-lg btn-primary btn-block" type = "submit" 
                name = "login">Login</button>
          </form>
       
-         Click here to clean <a href = "logout.php" tite = "Logout">Session.
+         
          
       </div> 
       

@@ -37,18 +37,10 @@ if ($conn->connect_error) {
 	die("Connection failed: " . $conn->connect_error);
 }
 
- $sql = "INSERT INTO formular (name, ort, email, nummer)
-VALUES ('$_POST[name]', '$_POST[ort]', '$_POST[email]', '$_POST[nummer]')"; 
+ 
 $sql1 = "SELECT id, name, ort, email, nummer  FROM formular";
 $result = $conn->query($sql1);
 
-
-
-  if ($conn->query($sql) === TRUE) {
-	
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-} 
 
 
 

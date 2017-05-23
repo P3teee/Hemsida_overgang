@@ -40,11 +40,11 @@
   		<li role="presentation"><a href="index.html" class="link_list">Hem</a></li>
   		<li role="presentation"><a href="info.html" class="link_list">Info</a></li>
   		<li role="presentation"  class="active" ><a href="formular.html" class="link_list active">Formulär</a></li>
+      <li role="presentation"><a href="login.php" class="link_list">Login</a></li>
   		<li> <button class="btn btn-primary center-block" type="button" data-toggle="collapse" data-target="#side" aria-expanded="false" aria-controls="side" id="button2">
   		
   Meny
 </button></li>
-<li> <a href="login.php"><button class="btn btn-primary center-block" type="button">Sug penis</button></a></li>
 	</ul>
 </div>
 
@@ -54,7 +54,7 @@
 
 <section id="section1" class="black-bg white-text row">
 	<h1 class="col-sm-12">Formulär</h1>
-		<form class="form-horizontal" action="index.php" method="get">
+		<form class="form-horizontal">
   			<div class="form-group">
     			<label for="InputName" class="col-sm-1 control-label">Namn</label>
     			<div class="col-sm-11 center-block">
@@ -119,15 +119,6 @@ $result = $conn->query($sql1);
 
 
 
- if ($result->num_rows > 0) {
-	echo "<table class='table table-striped'><tr><th>ID</th><th>Namn</th><th>Ort</th><th>Email</th><th>Nummer</th></tr>";
-	while($row = $result->fetch_assoc()) {
-		echo "<tr> <td>" .$row["id"]. "</td> <td>" .$row["name"]. "</td> <td> " .$row["ort"]. "</td> <td>" .$row["email"]. "</td> <td>" .$row["nummer"]. "</td> </tr>";
-	} 
-	echo "</table>";
-} else {
-	echo "0 Results";
-} 
 
 $conn->close();
 
